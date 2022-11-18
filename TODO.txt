@@ -1,0 +1,13 @@
+Documentation
+Move this TODO to Github
+Make node more red ('hotter') the more nodes that connect to it
+Reduce duplicated edges - will occur if one function calls another multiple times in its code
+Create .gitignore
+
+Doesn't handle:
+- commented out code
+- function definitions within other functions
+- Two functions that have the same name in different namespaces/.py files
+- The last function defined in .py file!
+- A function that is called in __init__.py (or even in just a regular script) outside of any function definition despite this indicating that the function is in fact used/depended upon
+- Classes and functions used and defined within these
