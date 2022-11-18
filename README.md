@@ -6,4 +6,4 @@
 2. Visualise which functions are more central to your program over others
 3. Identifies recursive functions
 
-![alt text](https://github.com/jack0reardon/looseends/tree/main/src/images/screenshot_1.png?raw=TRUE "Example graph")
+![alt text](https://github.com/jack0reardon/looseends/tree/main/src/images/screenshot.png?raw=TRUE "Example graph")
