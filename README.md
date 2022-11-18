@@ -1,8 +1,4 @@
 # looseends
-
-This is the README
-
-# looseends
 ### A meta-program - Produces graph of all the functions defined in your Python project so that you can identify any functions that were forgotten about and are no longer used
 *A POC*
 
