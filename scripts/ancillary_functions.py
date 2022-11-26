@@ -71,7 +71,7 @@ def get_defined_funcs_and_dependencies(file_path):
     defined_funcs_and_dependencies = {}
 
     for func_def in func_defs:
-        # Parse called function
+        # Parse the function definition
         called_functions = scripts.called_func_compiler.findall(func_def)
         calling_function = called_functions[0] + '()'
         defined_funcs_and_dependencies[calling_function] = [called_function + '()' for called_function in called_functions[1:]]
@@ -100,10 +100,22 @@ def get_loose_ends_graph(defined_funcs_and_dependencies):
         for dependency in defined_funcs_and_dependencies[defined_func]:
             directed_graph.add_edge(dependency, defined_func)
 
-    pos = nx.circular_layout(directed_graph)
-    nx.draw_networkx(directed_graph, pos, **scripts.options_for_graph)
-    nx.draw(directed_graph, pos)
+    # for node in directed_graph.nodes:
+    #     node['node_size'] = len(directed_graph.in_edges(node)) + 1
+
+    n_in_edges = [len(directed_graph.in_edges(node)) for node in directed_graph.nodes]
+    node_sizes = [(n + 1) * 300 for n in n_in_edges]
+    node_colours = n_in_edges
+
+    nx.draw(directed_graph,
+        pos = nx.circular_layout(directed_graph),
+        node_size = node_sizes,
+        node_color = node_colours,
+        **scripts.options_for_graph
+        )
+
     ax = plt.gca()
     ax.margins(0.20)
     plt.axis('off')
+    plt.tight_layout()
     plt.show()
