@@ -115,7 +115,7 @@ def get_loose_ends_graph(defined_funcs_and_dependencies):
         )
 
     ax = plt.gca()
-    ax.margins(0.20)
+    ax.margins(0.30)
     plt.axis('off')
     plt.tight_layout()
     plt.show()
