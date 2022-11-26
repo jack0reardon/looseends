@@ -100,10 +100,10 @@ def get_loose_ends_graph(defined_funcs_and_dependencies):
         for dependency in defined_funcs_and_dependencies[defined_func]:
             directed_graph.add_edge(dependency, defined_func)
 
-    pos = nx.shell_layout(directed_graph)
+    pos = nx.circular_layout(directed_graph)
     nx.draw_networkx(directed_graph, pos, **scripts.options_for_graph)
     nx.draw(directed_graph, pos)
     ax = plt.gca()
     ax.margins(0.20)
-    plt.axis("off")
+    plt.axis('off')
     plt.show()
